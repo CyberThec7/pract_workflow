@@ -1,4 +1,9 @@
-name: Issue Management Assistant
+name: Issue Management
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
 on:
   issues:
@@ -20,7 +25,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "👋 Thanks, request has been received and is under review."
+              body: "👋 Thanks, your request has been received and is under review."
             });
 
             github.rest.issues.addLabels({
@@ -35,16 +40,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            // Only label if the comment author is the repo owner
-            if (context.payload.comment.user.login === context.repo.owner) {
-              github.rest.issues.addLabels({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: ['owner-reviewed']
-              });
-            }
-          script2: |
+            // Only label if the comment author is the repository owner
             if (
               context.payload.comment.user.login === context.repo.owner &&
               !context.payload.issue.pull_request
@@ -56,4 +52,3 @@ jobs:
                 labels: ['owner-reviewed']
               });
             }
-
