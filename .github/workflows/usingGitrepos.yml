@@ -1,0 +1,17 @@
+name: run workfolw using Github repos(Checkout)
+on:
+  workflow_dispatch:
+
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display msg
+        run: echo "this not run from it self, you must run it manually, from button"
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
+      - name: List the files of the repo
+        run: |
+          echo "the repository is ${{github.repository}} contain the following file:"
+          tree
