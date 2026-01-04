@@ -5,7 +5,11 @@ on:
   pull_request:
     branches:
       - main
-
+  push:
+    paths:
+      - 'code/**'
+      - 'src/**'
+      - '.github/workflows/**'
 jobs:
   check:
     runs-on: ubuntu-latest
