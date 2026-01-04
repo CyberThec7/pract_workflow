@@ -1,0 +1,14 @@
+name: run using pull request
+on: 
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+     - name: check if request is pulled
+       run: eho "here requests that are pulled"
+       
