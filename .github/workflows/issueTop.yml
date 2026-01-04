@@ -44,7 +44,7 @@ jobs:
                 labels: ['owner-reviewed']
               });
             }
-          script: |
+          script2: |
             if (
               context.payload.comment.user.login === context.repo.owner &&
               !context.payload.issue.pull_request
