@@ -14,18 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Job´s name
-        run: echo "job 1"
+        run: echo "job 3"
 
 
   Job_3:
+    needs: Job_1
     runs-on: ubuntu-latest
     steps:
       - name: Print Job´s name
-        run: echo "job 1"
+        run: echo "job 3"
 
   Job_4:
-    needs: [Job_1, Job_2, Job_3]
+    needs: [Job_2, Job_3]
     runs-on: ubuntu-latest
     steps:
       - name: Print Job´s name
-        run: echo "job 1"
+        run: echo "job 4"
