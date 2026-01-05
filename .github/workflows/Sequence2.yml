@@ -18,7 +18,7 @@ jobs:
         run: echo "water is hot"
 
   coffee_einfuelen:
-    needs: [wasser_einfuelen, wasser_heissen]
+    needs: [wasser_einfuelen, wasser_heissen, coffee_beachten]
     runs-on: ubuntu-latest
     steps:
       - name: third step
