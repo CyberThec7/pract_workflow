@@ -1,0 +1,31 @@
+name: Sequence Multi Jobs
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  Job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Job´s name
+        run: echo "job 1"
+
+  Job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Job´s name
+        run: echo "job 1"
+
+
+  Job_3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Job´s name
+        run: echo "job 1"
+
+  Job_4:
+    needs: [Job_1, Job_2, Job_3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Job´s name
+        run: echo "job 1"
