@@ -1,0 +1,39 @@
+name: Sequence Multi Jobs V2
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  wasser_einfuelen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first step
+        run: echo "water is there"
+
+  wasser_heissen:
+    needs: wasser_einfuelen
+    runs-on: ubuntu-latest
+    steps:
+      - name: second step
+        run: echo "water is hot"
+
+  coffee_einfuelen:
+    needs: [wasser_einfuelen, wasser_heissen]
+    runs-on: ubuntu-latest
+    steps:
+      - name: third step
+        run: echo "coffee is there"
+
+  coffee_beachten:
+    needs: coffee_einfuelen
+    runs-on: ubuntu-latest
+    steps:
+      - name: fourth step
+        run: echo "coffee is under wotching"
+        
+  coffee_trinken:
+    needs: wasser_einfuelen
+    runs-on: ubuntu-latest
+    steps:
+      - name: fifth step
+        run: echo "coffee is gone"
