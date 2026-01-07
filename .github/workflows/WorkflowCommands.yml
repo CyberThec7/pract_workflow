@@ -1,0 +1,15 @@
+name: workflow commands
+
+on:
+ workflow_dispatch:
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: display warining msg
+     run: 
+        echo "::warning::Warning msg"
+   - name: display Error msg
+     run: 
+        echo "::warning::Warning msg"
