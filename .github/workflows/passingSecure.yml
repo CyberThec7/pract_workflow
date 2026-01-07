@@ -7,12 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: write secret varialbe
+      - name: write secret variable
         id: masker
         run: |
-         secret_value=noValue
-         echo "::add-mask::$secret_vlue"
-         echo "SECRET_VALUE=$secret_value" >> "$GITHUB_OUTPUT"
+          secret_value=noValue
+          echo "::add-mask::$secret_value"
+          echo "SECRET_VALUE=$secret_value" >> $GITHUB_OUTPUT
 
       - name: USE the secret value
-        run: echo "${{steps.masker.outputs.SECRET_VALUE}}"
+        run: echo "${{ steps.masker.outputs.SECRET_VALUE }}"
