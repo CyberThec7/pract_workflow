@@ -12,4 +12,4 @@ jobs:
         echo "::warning::Warning msg"
    - name: display Error msg
      run: 
-        echo "::warning::Warning msg"
+        echo "::error::Error msg"
