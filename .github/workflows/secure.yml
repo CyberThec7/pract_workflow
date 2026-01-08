@@ -11,7 +11,7 @@ jobs:
         id: secure_net
         run: |
           secure_var=Mate
-          # echo "::add-mask::$secure_var"
+          echo "::add-mask::$secure_var"
           echo "SECRET_VALUE=$secure_var" >> "$GITHUB_OUTPUT"
         
       - name: using secret var
