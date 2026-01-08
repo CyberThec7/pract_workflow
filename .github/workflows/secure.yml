@@ -16,4 +16,4 @@ jobs:
         id: secure.net
         
       - name: using secret var
-        run: echo "the secret var is ${{steps.masker.outputs.SECRET_VALUE}}"
+        run: echo "the secret var is ${{steps.secure.net.outputs.SECRET_VALUE}}"
