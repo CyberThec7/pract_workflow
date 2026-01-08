@@ -12,8 +12,8 @@ jobs:
         run: |
           secure_var=Mate
           echo "::add-mask::$secure_var"
-          echo "secret_value=$secure_var" >> "$GITHUB_OUTPUT"
+          echo "SECRET_VALUE=$secure_var" >> "$GITHUB_OUTPUT"
         id: secure.net
         
       - name: using secret var
-        run: echo "the secret var is ${{steps.masker.outputs.secret_value}}"
+        run: echo "the secret var is ${{steps.masker.outputs.SECRET_VALUE}}"
