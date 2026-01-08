@@ -10,8 +10,8 @@ jobs:
       - name: use real GitHub secret
         id: secure_net
         run: |
-          echo "::add-mask::${{ secure_net.JUST_TO_TRING_SECURE }}"
-          echo "SECRET_VALUE=${{ secure_net.JUST_TO_TRING_SECURE }}" >> "$GITHUB_OUTPUT"
+          echo "::add-mask::${{ secrets.JUST_TO_TRING_SECURE }}"
+          echo "SECRET_VALUE=${{ secrets.JUST_TO_TRING_SECURE }}" >> "$GITHUB_OUTPUT"
 
       - name: using secret var
         run: echo "the secret var is ${{ steps.secure_net.outputs.SECRET_VALUE }}"
