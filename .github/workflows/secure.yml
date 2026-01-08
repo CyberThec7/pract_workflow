@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: use real GitHub secret
         run: |
-          echo "::add-mask::${{ vars.JUST_TO_TRING_SECURE }}"
-          echo "SECRET_VALUE=${{ secrets.connec }}" >> "$GITHUB_OUTPUT"
+          echo "SECRET_VARIALBE${{ vars.JUST_TO_TRING_SECURE }}" 
+          echo "SECRET_VALUE=${{ secrets.connec }}" 
