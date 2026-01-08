@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: creating a variable
         id: generate_variable
-        run: echo "sacalambo = dadodi"
+        run: echo "sacalambo = dadodi" >> "$github_output"
 
       - name: let_get_variable
         run: echo "${{steps.generate_variable.outputs.sacalambo}}"
