@@ -1,0 +1,16 @@
+name: try passing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: creating a variable
+        id: generate_variable
+        run: echo "sacalambo = dadodi"
+
+      - name: let_get_variable
+        run: echo "${{steps.generate_variable.outputs.sacalambo}}"
+  
